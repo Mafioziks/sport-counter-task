@@ -1,5 +1,6 @@
 package lv.id.tomsteteris.novusscounter;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,16 @@ public class MainActivity extends AppCompatActivity {
         updateScore("red");
         updateScore("black");
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setContentView(R.layout.activity_main);
+
+        updateScore("red");
+        updateScore("black");
+    }
+
 
     public void addPointRed(View view) {
         scoreRed++;
@@ -62,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
         if (scoreRed - minusesRed >= maxPieces) {
             TextView gameWinInfo = (TextView) findViewById(R.id.game_win_info);
             gameWinInfo.setText(
-                    "Winner: Team Red \n" +
-                    "Minuses: " + minusesRed + "\n" +
-                    "Centers: " + centersRed
+                    getText(R.string.winner) + ": " + getText(R.string.red_team) + "\n" +
+                    getText(R.string.minuses) + ": " + minusesRed + "\n" +
+                    getText(R.string.centers) + ": " + centersRed
             );
             blockCounterButtons();
         }
@@ -72,9 +83,9 @@ public class MainActivity extends AppCompatActivity {
         if (scoreBlack - minusesBlack >= maxPieces) {
             TextView gameWinInfo = (TextView) findViewById(R.id.game_win_info);
             gameWinInfo.setText(
-                    "Winner: Team Black \n" +
-                            "Minuses: " + minusesBlack + "\n" +
-                            "Centers: " + centersBlack
+                    getText(R.string.winner) + ": " + getText(R.string.black_team) + "\n" +
+                    getText(R.string.minuses) + ": " + minusesBlack + "\n" +
+                    getText(R.string.centers) + ": " + centersBlack
             );
             blockCounterButtons();
         }
@@ -90,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.black_center).setEnabled(false);
         findViewById(R.id.black_minus).setEnabled(false);
 
-        ((Button) findViewById(R.id.game_end)).setText("New Game");
+        ((Button) findViewById(R.id.game_end)).setText(getText(R.string.new_game));
     }
 
     public void switchGameType(View view) {
@@ -98,18 +109,18 @@ public class MainActivity extends AppCompatActivity {
 
         if (maxPieces == 8) {
             maxPieces = 16;
-            gameTypeInfo.setText("Game type: Team vs Team");
+            gameTypeInfo.setText(getText(R.string.game_type_team_vs_team));
             return;
         }
 
         maxPieces = 8;
-        gameTypeInfo.setText("Game type: Player vs Player");
+        gameTypeInfo.setText(getText(R.string.game_type_player_vs_player));
         return;
     }
 
 
     public void gameEnd(View view) {
-        ((Button) view).setText("End Game");
+        ((Button) view).setText(getText(R.string.end_game));
         scoreRed = 0;
         scoreBlack = 0;
         minusesRed = 0;

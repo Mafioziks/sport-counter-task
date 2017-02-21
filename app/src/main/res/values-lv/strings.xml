@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Novusa Skaitītājs</string>
+    <string name="_1_center">1 centrs</string>
+    <string name="_1_hit">1 trāpījums</string>
+    <string name="_1_minus">1 mīnus</string>
+    <string name="black_team">Melnā komanda</string>
+    <string name="centers">Centri</string>
+    <string name="change">Mainīt</string>
+    <string name="end_game">Beigt spēli</string>
+    <string name="game_type_player_vs_player">Spēles veids: individuālā</string>
+    <string name="game_type_team_vs_team">Spēles veids: komandu</string>
+    <string name="minuses">Mīnusi</string>
+    <string name="new_game">Jauna spēle</string>
+    <string name="red_team">Sarkanā komanda</string>
+    <string name="winner">Uzvarēja</string>
+</resources>
