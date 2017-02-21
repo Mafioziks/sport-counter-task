@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="lv.id.tomsteteris.novusscounter.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/game_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game type: Player vs Player"/>
+
+            <Button
+                android:id="@+id/game_type_change"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:onClick="switchGameType"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/score_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Red Team"/>
+
+                <TextView
+                    android:id="@+id/red_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="0"/>
+
+                <Button
+                    android:id="@+id/red_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 hit"
+                    android:onClick="addPointRed"/>
+
+                <Button
+                    android:id="@+id/red_minus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 minus"
+                    android:onClick="addMinusRed"/>
+
+                <Button
+                    android:id="@+id/red_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 center"
+                    android:onClick="addCenterRed"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Black Team"/>
+
+                <TextView
+                    android:id="@+id/black_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="0"/>
+
+                <Button
+                    android:id="@+id/black_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 hit"
+                    android:onClick="addPointBlack"/>
+
+                <Button
+                    android:id="@+id/black_minus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 minus"
+                    android:onClick="addMinusBlack"/>
+
+                <Button
+                    android:id="@+id/black_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 center"
+                    android:onClick="addCenterBlack"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/game_win_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Winner: "/>
+
+        <Button
+            android:id="@+id/game_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="End game"
+            android:onClick="gameEnd"/>
+
+    </LinearLayout>
+</ScrollView>
